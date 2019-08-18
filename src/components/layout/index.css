@@ -1,0 +1,111 @@
+#gatsby-focus-wrapper {
+  width: 100%;
+  display: grid;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  grid-template-rows: 1fr auto;
+}
+
+pre[class*="language-"] {
+  font-size: 14px;
+}
+
+.backLink {
+  color: #000;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 100px;
+  letter-spacing: 1px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 42px;
+  margin: 60px 0 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h3 {
+  margin: 0;
+  color: #678;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+article {
+  margin-bottom: 80px;
+}
+
+article p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+article a {
+  color: #000;
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  color: #678;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  color: #678;
+}
+
+footer a:hover {
+  color: #111;
+}
+
+main {
+  min-width: 0;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+
+main > p > a {
+  color: #fff;
+  padding: 0 7px;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(to right, rgba(253, 116, 108, 1), rgba(255, 144, 104, 1));
+}
+
+main > p > a:hover {
+  background: linear-gradient(to right, rgba(253, 116, 108, .8), rgba(255, 144, 104, .8));
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 11vw;
+    line-height: 11vw;
+  }
+}
