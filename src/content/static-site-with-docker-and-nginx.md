@@ -5,7 +5,7 @@ path: /static-site-with-docker-and-nginx
 ---
 
 If you need a quick way to serve static files, Nginx with Docker Compose is a
-hassle free starting point:
+hassle free alternative:
 
 ```yaml
 # docker-compose.yml

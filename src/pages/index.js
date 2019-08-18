@@ -46,16 +46,12 @@ const IndexPage = () => {
         >
           CV
         </a>
-        {``} or see the code behind it {``}
-        <a target='__blank' href='https://github.com/jbonigomes/cv'>
-          here
-        </a>
-        . If you are into web development or JavaScript or have any
+        {``} here or... if you are into web development, JavaScript or have any
         comments/suggestions about this journal, why not {``}
         <a target='__blank' href='mailto:jbonigomes@yahoo.com.br'>
           get in touch
         </a>
-        {``} or just scroll down and read the articles.
+        {``} or just scroll down to read the articles.
       </p>
 
       {nodes.map((post) => (
