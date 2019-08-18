@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/jbonigomes`,
   siteMetadata: {
     author: `Jose B. Gomes`,
     title: `jbonigomes Dev Journal`,

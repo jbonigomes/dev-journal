@@ -46,7 +46,7 @@ const IndexPage = () => {
         >
           CV
         </a>
-        {``} or see the code behind it here {``}
+        {``} or see the code behind it {``}
         <a target='__blank' href='https://github.com/jbonigomes/cv'>
           here
         </a>
