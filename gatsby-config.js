@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `/dev-journal`,
   siteMetadata: {
     author: `Jose B. Gomes`,
     title: `jbonigomes Dev Journal`,

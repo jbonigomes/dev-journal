@@ -39,7 +39,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "start": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
