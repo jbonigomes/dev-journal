@@ -42,6 +42,14 @@ module.exports = {
           `gatsby-remark-prismjs`,
         ]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-62901832-1`,
+        head: false,
+        pageTransitionDelay: 0,
+      },
+    },
   ],
 }
