@@ -9,6 +9,11 @@
   grid-template-rows: 1fr auto;
 }
 
+#disqus_thread {
+  width: 100%;
+  margin-top: 60px;
+}
+
 pre[class*="language-"] {
   font-size: 14px;
 }
