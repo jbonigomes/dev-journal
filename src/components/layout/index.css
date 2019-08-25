@@ -18,7 +18,7 @@ pre[class*="language-"] {
   font-size: 14px;
 }
 
-:not(pre)>code.language-text {
+:not(pre) > code.language-text {
   padding: .1em .3em;
 }
 
@@ -104,6 +104,7 @@ main > p > a {
   border-radius: 5px;
   display: inline-block;
   text-decoration: none;
+  text-shadow: 1px 1px rgba(0, 0, 0, .1);
   font-family: 'Courier New', Courier, monospace;
   background: linear-gradient(to right, rgba(253, 116, 108, 1), rgba(255, 144, 104, 1));
 }
