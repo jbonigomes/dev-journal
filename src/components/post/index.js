@@ -16,14 +16,13 @@ const Post = ({ data }) => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </Link>
       <h1>{frontmatter.title}</h1>
-      <h2>{`https://jbonigomes.com/${frontmatter.path}`}</h2>
       <h3><FontAwesomeIcon icon={faClock} /> {frontmatter.date}</h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <Disqus
         config={{
           title: frontmatter.title,
           identifier: frontmatter.path,
-          url: `https://jbonigomes.com/${frontmatter.path}`,
+          url: `https://jbonigomes.com${frontmatter.path}`,
         }}
       />
     </Layout>
