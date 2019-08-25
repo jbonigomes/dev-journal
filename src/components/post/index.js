@@ -16,14 +16,14 @@ const Post = ({ data }) => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </Link>
       <h1>{frontmatter.title}</h1>
-      <h2>{`https://jbonigomes.com/${location.pathname}`}</h2>
+      <h2>{`https://jbonigomes.com/${frontmatter.path}`}</h2>
       <h3><FontAwesomeIcon icon={faClock} /> {frontmatter.date}</h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <Disqus
         config={{
-          url: `https://jbonigomes.com/${location.pathname}`,
-          identifier: frontmatter.path,
           title: frontmatter.title,
+          identifier: frontmatter.path,
+          url: `https://jbonigomes.com/${frontmatter.path}`,
         }}
       />
     </Layout>
@@ -37,9 +37,9 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
