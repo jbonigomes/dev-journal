@@ -51,5 +51,11 @@ module.exports = {
         trackingId: `UA-62901832-2`,
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `jbonigomes.disqus.com`
+      }
+    },
   ],
 }

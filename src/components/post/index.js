@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { Disqus } from 'gatsby-plugin-disqus'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -15,8 +16,16 @@ const Post = ({ data }) => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </Link>
       <h1>{frontmatter.title}</h1>
+      <h2>{`${config.siteUrl}${location.pathname}`}</h2>
       <h3><FontAwesomeIcon icon={faClock} /> {frontmatter.date}</h3>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Disqus
+        config={{
+          url: `${config.siteUrl}${location.pathname}`,
+          identifier: frontmatter.path,
+          title: frontmatter.title,
+        }}
+      />
     </Layout>
   )
 }
