@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `jbonigomes.disqus.com`
+        shortname: `jbonigomes`
       }
     },
   ],
