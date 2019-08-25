@@ -18,7 +18,7 @@ pre[class*="language-"] {
   font-size: 14px;
 }
 
-code.language-text {
+:not(pre)>code.language-text {
   padding: .1em .3em;
 }
 
