@@ -1,3 +1,8 @@
+::selection {
+  color: #fff;
+  background: #f96;
+}
+
 #gatsby-focus-wrapper {
   width: 100%;
   display: grid;
@@ -106,11 +111,11 @@ main > p > a {
   text-decoration: none;
   text-shadow: 1px 1px rgba(0, 0, 0, .1);
   font-family: 'Courier New', Courier, monospace;
-  background: linear-gradient(to right, rgba(253, 116, 108, 1), rgba(255, 144, 104, 1));
+  background: linear-gradient(to right, #f76, #f96);
 }
 
 main > p > a:hover {
-  background: linear-gradient(to right, rgba(253, 116, 108, .8), rgba(255, 144, 104, .8));
+  background: linear-gradient(to right, #f98, #fb8);
 }
 
 @media screen and (max-width: 800px) {
