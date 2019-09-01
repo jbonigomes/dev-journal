@@ -40,8 +40,14 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-prismjs`,
-        ]
-      }
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -54,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `jbonigomes`
-      }
+        shortname: `jbonigomes`,
+      },
     },
   ],
 }
