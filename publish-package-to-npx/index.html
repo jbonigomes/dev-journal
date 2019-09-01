@@ -9,14 +9,14 @@ inspired you) lets get to the nitty gritty of how to build one.</p>
 <p>Creating an NPX package is no different then creating a standard NPM package,
 the only thing you really need to know is that you must add a <code class="language-text">bin</code> command to
 the root of your <code class="language-text">package.json</code> file. So it looks a little like this:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
-  &quot;name&quot;: &quot;@jbonigomes/some-package&quot;,
-  &quot;version&quot;: &quot;5.5.5&quot;,
-  &quot;bin&quot;: {
-    &quot;some-package&quot;: &quot;./some-file.js&quot;
-  },
-  // ... rest of package.json
-}</code></pre></div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"@jbonigomes/some-package"</span><span class="token punctuation">,</span>
+  <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token string">"5.5.5"</span><span class="token punctuation">,</span>
+  <span class="token string">"bin"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"some-package"</span><span class="token punctuation">:</span> <span class="token string">"./some-file.js"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// ... rest of package.json</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>Note that the name of the package is the same as the name of the bin command,
 this command will then be available via NPX, in my case, I am namespacing it
 under my NPM username <code class="language-text">@jbonigomes</code>, but you don't have to.</p>
@@ -25,20 +25,20 @@ script to <code class="language-text">git clone</code> my package, then <code cl
 Remember this runs in a <code class="language-text">node.js</code> environment, so all those goodies are
 available out of the box, in my case <code class="language-text">spawnSync</code> from <code class="language-text">child_process</code> was
 exactly what I needed:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">#! /usr/bin/env node
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">#<span class="token operator">!</span> <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env node
 
-&#39;use strict&#39;;
+<span class="token string">'use strict'</span><span class="token punctuation">;</span>
 
-const appName = process.argv[2];
-const { spawnSync } = require(&#39;child_process&#39;);
-const url = &#39;git@github.com:jbonigomes/create-react-slides.git&#39;;
+<span class="token keyword">const</span> appName <span class="token operator">=</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> spawnSync <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">'git@github.com:jbonigomes/create-react-slides.git'</span><span class="token punctuation">;</span>
 
-spawnSync(&#39;git&#39;, [&#39;clone&#39;, url, `${process.cwd()}/${appName}`]);
-spawnSync(&#39;npm&#39;, [&#39;install&#39;, &#39;--prefix&#39;, `${process.cwd()}/${appName}`]);
+<span class="token function">spawnSync</span><span class="token punctuation">(</span><span class="token string">'git'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'clone'</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>appName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">spawnSync</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'install'</span><span class="token punctuation">,</span> <span class="token string">'--prefix'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>appName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console.log(&#39;Your app has been successfully installed&#39;);
-console.log(`$ cd ${appName}`);
-console.log(&#39;$ npm start&#39;);</code></pre></div>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Your app has been successfully installed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">$ cd </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>appName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'$ npm start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>If you want to try that package, you can run:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ npx @jbonigomes/create-react-slides some-presentation</code></pre></div>
 <p>Note that <code class="language-text">some-presentation</code> will be fed as <code class="language-text">process.argv[2]</code> into the script
@@ -46,7 +46,7 @@ above.</p>
 <p>Also, note the usage of <code class="language-text">#! /usr/bin/env node</code> when I first deployed my package,
 I didn't realise that without it, the whole piece wouldn't work.</p>
 <p>Before I wrap up, you can find the source code for the package here:</p>
-<p><a href="create-react-slides">https://github.com/jbonigomes/create-react-slides</a></p>
+<p><a href="https://github.com/jbonigomes/create-react-slides">create-react-slides</a></p>
 <p>I will be updating it as more handy <code class="language-text">components</code> are created.</p></div><div id="disqus_thread"></div></main><footer>jbonigomes.com © <!-- -->2019<!-- -->, Built with <a target="__blank" href="https://www.gatsbyjs.org">Gatsby</a></footer></div></div><script>
   
   
