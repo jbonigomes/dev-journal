@@ -68,7 +68,6 @@ Also, note the usage of `#! /usr/bin/env node` when I first deployed my package,
 I didn't realise that without it, the whole piece wouldn't work.
 
 Before I wrap up, you can find the source code for the package here:
-
 [create-react-slides](https://github.com/jbonigomes/create-react-slides)
 
 I will be updating it as more handy `components` are created.

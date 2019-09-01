@@ -24,6 +24,8 @@ pre[class*="language-"] {
 }
 
 :not(pre) > code.language-text {
+  color: #222;
+  background: #eee;
   padding: .1em .3em;
 }
 
