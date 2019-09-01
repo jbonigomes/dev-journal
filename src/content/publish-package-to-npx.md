@@ -19,14 +19,16 @@ Creating an NPX package is no different then creating a standard NPM package,
 the only thing you really need to know is that you must add a `bin` command to
 the root of your `package.json` file. So it looks a little like this:
 
-    {
-      "name": "@jbonigomes/some-package",
-      "version": "5.5.5",
-      "bin": {
-        "some-package": "./some-file.js"
-      },
-      // ... rest of package.json
-    }
+```javascript
+{
+  "name": "@jbonigomes/some-package",
+  "version": "5.5.5",
+  "bin": {
+    "some-package": "./some-file.js"
+  },
+  // ... rest of package.json
+}
+```
 
 Note that the name of the package is the same as the name of the bin command,
 this command will then be available via NPX, in my case, I am namespacing it
@@ -38,20 +40,22 @@ Remember this runs in a `node.js` environment, so all those goodies are
 available out of the box, in my case `spawnSync` from `child_process` was
 exactly what I needed:
 
-    #! /usr/bin/env node
+```javascript
+#! /usr/bin/env node
 
-    'use strict';
+'use strict';
 
-    const appName = process.argv[2];
-    const { spawnSync } = require('child_process');
-    const url = 'git@github.com:jbonigomes/create-react-slides.git';
+const appName = process.argv[2];
+const { spawnSync } = require('child_process');
+const url = 'git@github.com:jbonigomes/create-react-slides.git';
 
-    spawnSync('git', ['clone', url, `${process.cwd()}/${appName}`]);
-    spawnSync('npm', ['install', '--prefix', `${process.cwd()}/${appName}`]);
+spawnSync('git', ['clone', url, `${process.cwd()}/${appName}`]);
+spawnSync('npm', ['install', '--prefix', `${process.cwd()}/${appName}`]);
 
-    console.log('Your app has been successfully installed');
-    console.log(`$ cd ${appName}`);
-    console.log('$ npm start');
+console.log('Your app has been successfully installed');
+console.log(`$ cd ${appName}`);
+console.log('$ npm start');
+```
 
 If you want to try that package, you can run:
 
@@ -65,6 +69,6 @@ I didn't realise that without it, the whole piece wouldn't work.
 
 Before I wrap up, you can find the source code for the package here:
 
-[https://github.com/jbonigomes/create-react-slides](create-react-slides)
+[create-react-slides](https://github.com/jbonigomes/create-react-slides)
 
 I will be updating it as more handy `components` are created.
